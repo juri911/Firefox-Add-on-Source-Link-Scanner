@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1">
+  <title>Links-Scanner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Quelltext-Links-Scanner</h1>
+    <p class="url-display" id="currentUrl"></p>
+  </header>
+
+  <section class="controls">
+    <label class="filter-label">Filter:</label>
+    <div class="filter-options">
+      <label class="radio-label">
+        <input type="radio" name="filter" value="all" checked> Alle Links
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="filter" value="same"> Nur diese Seite
+      </label>
+      <label class="radio-label radio-label-block">
+        <input type="radio" name="filter" value="website"> Nur Webseite:
+      </label>
+    </div>
+    <div class="filter-website-row">
+      <input type="text" id="filterWebsite" class="input-website" placeholder="z.B. example.com oder https://…" />
+    </div>
+    <button type="button" class="btn btn-scan" id="btnScan">Seite scannen</button>
+  </section>
+
+  <section class="results">
+    <div class="results-header">
+      <span id="resultsCount">0 Links</span>
+      <button type="button" class="btn btn-small" id="btnCopy" title="Alle anzeigten Links kopieren">Kopieren</button>
+    </div>
+    <div class="link-list" id="linkList"></div>
+    <p class="hint" id="hint">Klicke auf „Seite scannen“, um die Links der aktuellen Seite zu extrahieren.</p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
